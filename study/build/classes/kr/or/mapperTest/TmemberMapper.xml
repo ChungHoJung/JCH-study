@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.mapperTest.MemberMapper">
+	
+	<select id = "selectMember"
+			parameterType="kr.or.nextit.member.service.MemberVo"
+			resultType="kr.or.nextit.member.service.MemberVo"
+	>
+	SELECT
+	    mem_id as userId,
+	    mem_pw as userPw,
+	    mem_name as userName,
+	    mem_email as userEmail,
+	    mem_phone as userHp,
+	    reg_date
+	FROM
+	    tbb_member
+	WHERE
+	    mem_id = #{userId}
+	  
+	</select>
+
+</mapper>
